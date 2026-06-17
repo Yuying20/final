@@ -20,7 +20,7 @@ body {
     top: 0;
     font-family: 'Noto Sans TC', 'sans-serif';
     line-height: 1.6;
-    color: rgb(19, 19, 19);
+    color: rgba(19, 19, 19);
 }
 
 .logo {
@@ -115,10 +115,17 @@ button:hover{opacity:0.5;}
     align-items: center;
 }
 
-.hero-image img{
-    max-width: 100% ;
+.hero-image img {
+    max-width: 100%;
     border-radius: 20px;
-    box-shadow: 0 20px 50px  rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    /* 1. 確保放大時有平滑縮放的效果 */
+    transition: transform 0.5s ease, filter 0.5s ease; 
+}
+
+.hero-image img:hover {
+    transform: scale(1.03); /* 輕微放大 3% */
+    filter: brightness(1.1); /* 稍微變亮一點 */
 }
 
 .chat-box{

@@ -25,6 +25,10 @@ function  changeColor(){
     }
 } 
 
+function viewSource() {
+    alert("想看原始碼嗎？請在網頁上按右鍵選擇「檢查」或 F12，就可以看到完整的架構囉！");
+}
+
 const SendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const aiResponse = document.getElementById("ai-response");
@@ -37,7 +41,17 @@ SendBtn.addEventListener('click', function(){
     }
 
     setTimeout(function() {
-        if (userMessage.includes('淺色') || userMessage.includes('白天')) {
+    
+        if (userMessage.includes('你好') || userMessage.includes('哈囉')) {
+            aiResponse.innerText='AI 助理:您好呀〜今天過得還好嗎?';
+        } 
+        else if (userMessage.includes('功能' ) || userMessage.includes('做什麼')) {
+            aiResponse.innerText='AI助理:我可以陪你聊天、幫你換標題的顏色!';
+        } 
+        else if (userMessage.includes('學校') || userMessage.includes('東吳')) {
+            aiResponse.innerText='AI 助理:東吳大學是個學習網頁設計最棒的地方!';
+        } 
+        else if (userMessage.includes('淺色') || userMessage.includes('白天')) {
             document.body.className ='theme-light'
             aiResponse.innerText='AI 助理:您好呀〜今天過得還好嗎?';
         } 
@@ -56,17 +70,11 @@ SendBtn.addEventListener('click', function(){
         
     }, 300);
 
+    userInput.value =""
+});
 
-
-    if (userMessage.includes('你好') || userMessage.includes('哈囉')) {
-        aiResponse.innerText='AI 助理:您好呀〜今天過得還好嗎?';
-    } else if (userMessage.includes('功能' ) || userMessage.includes('做什麼')) {
-        aiResponse.innerText='AI助理:我可以陪你聊天、幫你換標題的顏色!';
-    } else if (userMessage.includes('學校') || userMessage.includes('東吳')) {
-        aiResponse.innerText='AI 助理:東吳大學是個學習網頁設計最棒的地方!';
-    } else {
-        aiResponse.innerText="我收到你的訊息「" + userMessage + "」了!不過我目前還沒開發此功能～";
+userInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        SendBtn.click(); // 模擬點擊發送按鈕
     }
-    
-     userInput.value =""
 });
