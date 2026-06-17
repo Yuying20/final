@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    
+<head>
+    <title>響應式網頁設計佈局練習</title>
+    <link rel="stylesheet" href="style.css"></link>
+</head>
+
+<body>
+    <nav class="navbar">
+    <div class="logo" id="main-logo"> 11173107 李郁瑩 </div>
+    <ul class="nav-link">
+        <li><a href='#'>台積電</a></li>
+        <li><a href='#'>台積電</a></li>
+        <li><a href='#'>台積電</a></li>
+        <li><a href='#'>台積電</a></li>
+        <li><a href='#' class="btn-chat">Contact US</a></li>
+    </ul>
+    </nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <h1 id="hero-title">我的未來, 由<span class="highlight"> Rita</span> 主宰</h1>
+        <p>這是我在東吳大學基礎網頁設計課的第一個自製網站。我將學習使用響應式網頁設計的功能</p>
+        
+        <div class="chat-box">
+            <input type="text" id="user-input" placeholder="輸入指令:你好、學校、功能...">
+            <button id="send-btn" class="btn-primary">發送指令</button>
+        </div>
+        <p id="ai-response">AI助理:等待指令中...</p>
+        
+        <div class="hero-buttons">
+            <button class="btn-primary" onclick="changeColor()">變換顏色</button>
+            <button class="btn-secondary">查看原始碼</button>
+        </div>
+    </div>
+    <div class="hero-image"> 
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
+    </div>
+</header> 
+
+<script src="./java.js"></script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2gWmQusVH7_JurrjH4xeK";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>  
+</html>
